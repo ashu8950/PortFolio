@@ -47,13 +47,13 @@ const Contact = () => {
     }
 
     try {
-      const response = await axios.post('https://your-backend-url.vercel.app/api/send-email', formData);
+      const response = await axios.post('http://localhost:5001/send-email', formData);
       console.log('Server Response:', response.data);
       setStatus('Message sent successfully!');
       setFormData({ name: '', email: '', message: '' }); // Clear the form fields
     } catch (error) {
-      console.error('There was an error sending the email!', error.response ? error.response.data : error.message);
-      setStatus(error.response ? error.response.data.error : 'Failed to send the message. Please try again later.');
+      console.error('There was an error sending the email!', error);
+      setStatus('Failed to send the message. Please try again later.');
     } finally {
       setLoading(false); // Set loading state back to false when done
     }
@@ -144,7 +144,7 @@ const Contact = () => {
       <div className="map">
         <h2>Find Me Here</h2>
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.084628231838!2d-122.0842496846811!3d37.42199977982574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fbb33a45d6adf%3A0x7e1636d73e60cb2!2sGoogleplex!5e0!3m2!1sen!2sus!4v1635409898034!5m2!1sen!2sus"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d<YOUR_LATITUDE>!2d<YOUR_LONGITUDE>!3d<YOUR_LATITUDE>!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x<YOUR_LATITUDE>!2s<YOUR_ADDRESS>!5e0!3m2!1sen!2sus!4v1635409898034!5m2!1sen!2sus"
           width="100%"
           height="350"
           style={{ border: 0 }}
