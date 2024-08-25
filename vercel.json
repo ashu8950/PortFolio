@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
       {
-        "src": "PortFolio_Backend/server.js",
+        "src": "PortFolio_BackEnd/server.js",
         "use": "@vercel/node"
       },
       {
@@ -11,7 +11,7 @@
       }
     ],
     "routes": [
-      { "src": "/api/(.*)", "dest": "/PortFolio_Backend/server.js" },
+      { "src": "/api/(.*)", "dest": "/PortFolio_BackEnd/server.js" },
       { "src": "/(.*)", "dest": "/PortFolio_FrontEnd/$1" }
     ]
   }
