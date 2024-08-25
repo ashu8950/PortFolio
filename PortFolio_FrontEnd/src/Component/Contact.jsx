@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios'; 
+import axios from 'axios';
 import '../CSS/Contact.css';
 import linkedIn from '../assets/linkin.png';
 import git from '../assets/github.svg';
@@ -47,14 +47,13 @@ const Contact = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:5001/send-email', formData);
-      
+      const response = await axios.post('https://your-backend-url.vercel.app/api/send-email', formData);
       console.log('Server Response:', response.data);
       setStatus('Message sent successfully!');
       setFormData({ name: '', email: '', message: '' }); // Clear the form fields
     } catch (error) {
-      console.error('There was an error sending the email!', error);
-      setStatus('Failed to send the message. Please try again later.');
+      console.error('There was an error sending the email!', error.response ? error.response.data : error.message);
+      setStatus(error.response ? error.response.data.error : 'Failed to send the message. Please try again later.');
     } finally {
       setLoading(false); // Set loading state back to false when done
     }
@@ -88,15 +87,21 @@ const Contact = () => {
             <p><strong>Email:</strong> shabsingh961@gmail.com</p>
             <p><strong>Links:</strong></p>
             <ul>
-              <li><a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener noreferrer">
-                <img src={linkedIn} alt="LinkedIn" /> LinkedIn
-              </a></li>
-              <li><a href="https://github.com/ashu8950" target="_blank" rel="noopener noreferrer">
-                <img src={git} alt="GitHub" /> GitHub
-              </a></li>
-              <li><a href="https://x.com/AshuSin97381838" target="_blank" rel="noopener noreferrer">
-                <img src={twitter} alt="Twitter" /> Twitter
-              </a></li>
+              <li>
+                <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener noreferrer">
+                  <img src={linkedIn} alt="LinkedIn" /> LinkedIn
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/ashu8950" target="_blank" rel="noopener noreferrer">
+                  <img src={git} alt="GitHub" /> GitHub
+                </a>
+              </li>
+              <li>
+                <a href="https://x.com/AshuSin97381838" target="_blank" rel="noopener noreferrer">
+                  <img src={twitter} alt="Twitter" /> Twitter
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -133,7 +138,7 @@ const Contact = () => {
               {loading ? 'Sending...' : 'Send'}
             </button>
           </form>
-          {status && <p className={`status-message ${status.includes('success') ? 'success' : 'error'}`}>{status}</p>} {/* Display status messages */}
+          {status && <p className={`status-message ${status.includes('success') ? 'success' : 'error'}`}>{status}</p>}
         </div>
       </div>
       <div className="map">

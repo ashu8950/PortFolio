@@ -64,15 +64,15 @@ app.post('/send-email', async (req, res) => {
     text: `You have received a new message from ${name} <${email}>:\n\n${message}`,  // Include sender's name and email in the message body
   };
 
-  // Send mail with defined transport object
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.error('Error sending email:', error);
-      return res.status(500).json({ error: 'Failed to send the email' });
-    }
+  try {
+    // Send mail with defined transport object
+    const info = await transporter.sendMail(mailOptions);
     console.log('Email sent:', info.response);
     res.status(200).json({ message: 'Email sent successfully!' });
-  });
+  } catch (error) {
+    console.error('Error sending email:', error);
+    res.status(500).json({ error: 'Failed to send the email' });
+  }
 });
 
 const PORT = process.env.PORT || 5001;
