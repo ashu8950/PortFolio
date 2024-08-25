@@ -1,0 +1,186 @@
+.about-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #6dd5fa 100%);
+    padding: 0px;
+    position: absolute;
+    width: calc(100% - 265px); 
+    margin-left: 265px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 255, 255, 0.6);
+    overflow: hidden; 
+
+}
+
+
+.about-page.hidden {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.about-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.left-aboutPage {
+    flex: 1;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+.left-aboutPage h1 {
+    font-size: 3rem;
+    color: #000000;
+    margin-bottom: 1rem;
+    font-family: 'Arial', sans-serif;
+    text-shadow: 0 4px 6px rgba(87, 204, 214, 0.3); 
+}
+
+.left-aboutPage h2 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.left-aboutPage h3 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.intro-details {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+}
+
+.intro-details p {
+    margin-bottom: 0.5rem;
+}
+
+.intro-details a {
+    color: #99c2ee;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.intro-details a:hover {
+    color: #0056b3;
+}
+
+/* Buttons styling */
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1.25rem;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+.download-cv {
+    background-color: #99c2ee;
+}
+
+.download-cv:hover {
+    background-color: #0056b3;
+}
+
+.hire-me {
+    background-color: #4caf50; 
+}
+
+.hire-me:hover {
+    background-color: #388e3c;
+}
+
+
+@media (max-width: 768px) {
+    .about-page {
+        width: 100%; 
+        margin-left: 0; 
+        max-width: 100%;
+    }
+
+    .about-page-container {
+        padding: 10px;
+    }
+
+    .left-aboutPage {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .left-aboutPage h1 {
+        font-size: 2rem;
+    }
+
+    .left-aboutPage h2 {
+        font-size: 1.8rem;
+    }
+
+    .left-aboutPage h3 {
+        font-size: 1.3rem;
+    }
+
+    .intro-details {
+        font-size: 1rem;
+    }
+
+    .button {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-page {
+        width: 100%; 
+        margin-left: 0; 
+        max-width: 100%;
+    }
+
+    .left-aboutPage h1 {
+        font-size: 1.5rem;
+    }
+
+    .left-aboutPage h2 {
+        font-size: 1.5rem;
+    }
+
+    .left-aboutPage h3 {
+        font-size: 1rem;
+    }
+
+    .intro-details {
+        font-size: 0.875rem;
+    }
+
+    .button {
+        font-size: 0.875rem;
+        padding: 8px 16px;
+    }
+}

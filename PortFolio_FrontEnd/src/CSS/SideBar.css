@@ -1,0 +1,281 @@
+.SideBar-Container {
+    width: 250px;
+    height: 100vh;
+    background: linear-gradient(135deg, #436cb9 0%, #2a5298 50%, #6dd5fa 100%);
+    color: rgb(40, 35, 35);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 0, 0, 0.2) inset;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    transform: translateX(0);
+    transform-style: preserve-3d;
+}
+
+.SideBar-Container.open {
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.4), 0 0 40px rgba(0, 0, 0, 0.3) inset;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.overlay.show {
+    display: block;
+}
+
+.close-button {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #fff;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    transform-style: preserve-3d;
+}
+
+.close-button:hover {
+    transform: scale(1.1) rotate(10deg);
+    background: #caf3f7;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.toggle-button {
+    display: none;
+}
+
+.SideBarTop {
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.SideBarTop_Heading {
+    margin-top: 20px;
+    font-size: 1.75rem;
+    color: #0c0c0c;
+    font-family: 'Arial', sans-serif;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.SideBarTop_Image {
+    display: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.SideBarTop_Image img {
+    width: 80px;
+    height: 80px;
+    border-radius: 70%;
+    border: 2px solid transparent;
+    transition: all 0.3s ease, transform 0.5s ease, filter 0.5s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transform-style: preserve-3d;
+}
+
+.SideBarTop_Image img:hover {
+    border: 2px solid #caf3f7;
+    transform: scale(1.1) rotateY(20deg) rotateX(10deg);
+    filter: brightness(1.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.SideBar_Menu ul {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.SideBar_Menu li {
+    margin: 20px 0;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 10px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.9);
+    transform-style: preserve-3d;
+}
+
+.SideBar_Menu li:hover {
+    color: #000000;
+    background-color: #caf3f7;
+    border: 2px solid #caf3f7;
+    transform: scale(1.1) translateZ(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.menu-icon {
+    margin-right: 10px;
+    width: 24px;
+    height: 24px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    transform-style: preserve-3d;
+}
+
+.SideBar_Menu li:hover .menu-icon {
+    transform: rotateY(360deg);
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.5);
+}
+
+.SideBar_Bottom_Link {
+    margin-top: auto;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    transform-style: preserve-3d;
+}
+
+.icon:hover {
+    transform: scale(1.2) rotateX(10deg) rotateY(10deg);
+    box-shadow: 0 8px 30px rgba(0, 255, 255, 0.8);
+}
+
+@media only screen and (max-width: 600px) {
+    .SideBar-Container {
+        width: 100%;
+        height: 100vh;
+        transform: translateX(-100%);
+    }
+
+    .SideBar-Container.open {
+        transform: translateX(0);
+    }
+
+    .SideBarTop_Heading {
+        display: none;
+    }
+
+    .SideBarTop_Image {
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .SideBarTop_Image img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .SideBar_Menu ul {
+        width: 90%;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .SideBar_Menu li {
+        margin: 10px 0;
+        font-size: 16px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .SideBar_Bottom_Link {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    .icon {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        margin-right: 0;
+    }
+
+    .overlay.show {
+        display: block;
+    }
+
+    .close-button {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: #ffffff;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 1001;
+        padding: 10px;
+        border-radius: 50%;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        transform-style: preserve-3d;
+    }
+
+    .close-button:hover {
+        transform: scale(1.1) rotate(10deg);
+        background: #caf3f7;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .toggle-button {
+        display: block;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background-color: #ffffff;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 1001;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 50%;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        transform-style: preserve-3d;
+    }
+
+    .toggle-button:hover {
+        transform: scale(1.1) rotate(-10deg);
+        background-color: #caf3f7;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+}
+
+.SideBar_Menu a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.SideBar_Menu a.active {
+    font-weight: bold;
+    color: #000000;
+    background-color: #caf3f7;
+}

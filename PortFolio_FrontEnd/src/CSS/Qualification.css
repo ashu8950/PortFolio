@@ -1,0 +1,125 @@
+
+.qualification-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 265px; 
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #6dd5fa 100%);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 255, 255, 0.6);
+    max-width: 1200px;
+}
+
+.qualification-page h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    font-family: 'Arial', sans-serif;
+    text-shadow: 10px 15px 20px rgba(87, 204, 214, 0.1); 
+    text-align: center;
+}
+
+.qualification-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    align-items: center; 
+}
+
+.qualification-category {
+    background: linear-gradient(135deg, #2c3e50 0%, #4b79a1 100%); 
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 255, 255, 0.6); 
+    transition: box-shadow 0.3s, transform 0.3s;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+.qualification-category:hover {
+    box-shadow: 0 12px 30px rgba(0, 255, 255, 0.8); 
+    transform: scale(1.02);
+}
+
+.qualification-category h2 {
+    font-size: 1.75rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    font-family: 'Arial', sans-serif;
+    cursor: pointer;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
+    text-align: center; 
+}
+
+.qualification-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    align-items: center; 
+}
+
+.qualification-category.active .qualification-content {
+    max-height: 500px; 
+    opacity: 1;
+    padding-top: 10px;
+    box-shadow: 0 8px 20px rgba(0, 255, 255, 0.6); 
+}
+
+
+.qualification-content p {
+    font-size: 1.2rem;
+    margin: 5px 0;
+    color: #ffffff;
+    text-align: center; 
+}
+
+@media (max-width: 768px) {
+    .qualification-page {
+        padding: 15px;
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .qualification-category {
+        padding: 10px;
+    }
+
+    .qualification-category h2 {
+        font-size: 1.5rem;
+    }
+
+    .qualification-content p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .qualification-page {
+        padding: 10px;
+    }
+
+    .qualification-category {
+        padding: 8px;
+    }
+
+    .qualification-category h2 {
+        font-size: 1.25rem;
+    }
+
+    .qualification-content p {
+        font-size: 0.875rem;
+    }
+}

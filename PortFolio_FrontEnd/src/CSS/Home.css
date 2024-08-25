@@ -1,0 +1,306 @@
+
+.home-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #6dd5fa 100%);
+    padding: 0px;
+    position: absolute;
+    width: calc(100% - 265px); 
+    margin-left: 265px; 
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 255, 255, 0.6);
+    overflow: hidden; 
+}
+
+.home-page-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    flex-wrap: nowrap; 
+}
+
+.left-homePage {
+    flex: 1;
+    padding: 10px; 
+    text-align: left; 
+    margin-left: 3%;
+}
+
+.left-homePage h1 {
+    font-size: 4rem;
+    color: #ffffff;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Arial', sans-serif;
+    text-shadow: 3px 3px 20px rgba(0, 0, 0, 0.8);
+    background: -webkit-linear-gradient(#e96443, #904e95);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.left-homePage h2 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    margin-left: 2rem;
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.7);
+}
+
+.left-homePage h3 {
+    font-size: 1.5rem;
+    color: #b3e5fc;
+    margin-bottom: 0.5rem;
+    margin-left: 1.5rem;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
+}
+
+.typing-container {
+    height: 2.5rem;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 1rem; 
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+.typing-effect {
+    font-size: 1.3rem;
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+    white-space: nowrap;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
+}
+
+.download-btn {
+    background: linear-gradient(135deg, #43cea2, #185a9d);
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px; 
+    font-size: 1.25rem;
+    cursor: pointer;
+    border-radius: 30px;
+    margin-bottom: 1rem;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.download-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.social-links {
+    display: flex;
+    gap: 25px;
+    margin: 20px;
+}
+
+.social-links a {
+    display: inline-block;
+}
+
+.social-links img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.4));
+}
+
+.social-links img:hover {
+    transform: scale(1.1) rotate(10deg);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.right-homePage {
+    flex-shrink: 0; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.right-homePage img {
+    margin-bottom: 1rem;
+    border-radius: 50%; 
+    width: 300px; 
+    height: 300px; 
+    object-fit: cover;
+    opacity: 0.95; 
+    transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.right-homePage img:hover {
+    transform: translateY(-5px) scale(1.1) rotate(5deg); 
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
+    filter: brightness(1.1) contrast(1.2); 
+}
+
+@media (max-width: 768px) {
+    .home-page {
+        width: 100%; 
+        margin-left: 0; 
+    }
+
+    .home-page-container {
+        flex-direction: column; 
+        align-items: center;
+        text-align: center; 
+    }
+
+    .left-homePage, .right-homePage {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .right-homePage {
+        order: -1; 
+        margin-bottom: 5px;
+    }
+
+    .right-homePage img {
+        width: 200px; 
+        height: 200px; 
+    }
+
+    .left-homePage {
+        margin-bottom: 50px; 
+        text-align: center;
+        margin-right: 20px;
+    }
+
+    .left-homePage h1 {
+        font-size: 2rem;
+        margin-right: 10px;
+        margin-bottom: 0.2rem; 
+    }
+
+    .left-homePage h2 {
+        font-size: 1.8rem;
+        margin-right: 20px;
+    }
+
+    .left-homePage h3 {
+        font-size: 1.3rem;
+        margin-right: 10px;
+    }
+
+    .typing-container {
+        height: auto;
+    }
+
+    .typing-effect {
+        font-size: 1rem;
+    }
+
+    .download-btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+    .social-links {
+        display: flex;
+        gap: 200px;
+        margin: 20px;
+    }
+    
+    .social-links a {
+        display: inline-block;
+    }
+    
+    .social-links img {
+        width: 30px;
+        height: 30px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.4));
+    }
+    
+    .social-links img:hover {
+        transform: scale(1.1) rotate(10deg);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+    }
+    
+}
+
+@media (max-width: 480px) {
+    .home-page {
+        width: 100%; 
+        margin-left: 0; 
+    }
+
+    .right-homePage img {
+        width: 180px; 
+        height: 180px; 
+    }
+
+    .left-homePage h1 {
+        font-size: 1.5rem;
+        
+    }
+
+    .left-homePage h2 {
+        font-size: 1.5rem;
+    }
+
+    .left-homePage h3 {
+        font-size: 1rem;
+    }
+
+    .download-btn {
+        font-size: 0.875rem;
+        padding: 8px 16px;
+    }
+
+    .social-links img {
+        width: 24px;
+        height: 24px;
+        
+    }
+    .social-links {
+        display: flex;
+        gap: 100px;
+        margin: 20px;
+    }
+    
+    .social-links a {
+        display: inline-block;
+    }
+    
+    .social-links img {
+        width: 30px;
+        height: 30px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.4));
+    }
+    
+    .social-links img:hover {
+        transform: scale(1.1) rotate(10deg);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+    }
+    
+}
+
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 250px; 
+    width: calc(100% - 250px); 
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 1rem;
+    z-index: 1000;
+}
+
+@media (max-width: 768px) {
+    footer {
+        left: 0; 
+        width: 100%;
+    }
+}
