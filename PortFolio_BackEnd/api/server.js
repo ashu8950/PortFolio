@@ -1,13 +1,6 @@
-const express = require('express');
 const nodemailer = require('nodemailer');
-const cors = require('cors');
-const bodyParser = require('body-parser');
 const dns = require('dns');
 require('dotenv').config({path:"auth.env"}); // Load environment variables from .env file
-
-const app = express();
-app.use(cors());
-app.use(bodyParser.json());
 
 // Utility function for email format validation
 function isValidEmail(email) {
@@ -28,8 +21,12 @@ function isValidDomain(domain) {
   });
 }
 
-// Route to handle sending email
-app.post('/send-email', async (req, res) => {
+// Serverless function handler
+module.exports = async (req, res) => {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
+
   const { name, email, message } = req.body;
 
   if (!name || !email || !message) {
@@ -65,18 +62,11 @@ app.post('/send-email', async (req, res) => {
   };
 
   // Send mail with defined transport object
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.error('Error sending email:', error);
-      return res.status(500).json({ error: 'Failed to send the email' });
-    }
-    console.log('Email sent:', info.response);
+  try {
+    await transporter.sendMail(mailOptions);
     res.status(200).json({ message: 'Email sent successfully!' });
-  });
-});
-
-// Define the port to listen on
-const PORT = process.env.PORT || 5001;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+  } catch (error) {
+    console.error('Error sending email:', error);
+    res.status(500).json({ error: 'Failed to send the email' });
+  }
+};
