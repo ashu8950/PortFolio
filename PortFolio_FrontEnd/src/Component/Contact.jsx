@@ -82,8 +82,8 @@ const Contact = () => {
         <div className="contact-info">
           <div className="contact-details">
             <h2>Contact Information</h2>
-            <p><strong>Phone:</strong> +8708684910</p>
-            <p><strong>WhatsApp:</strong> +8950653320</p>
+            <p><strong>Phone:</strong> +91 8708684910</p>
+            <p><strong>WhatsApp:</strong> +91 8950653320</p>
             <p><strong>Email:</strong> shabsingh961@gmail.com</p>
             <p><strong>Links:</strong></p>
             <ul>
