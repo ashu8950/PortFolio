@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #6dd5fa 100%);
+    background: linear-gradient(135deg, #000000 0%, #2f4550 20%, #586f7c 40%, #b8dbd9 80%, #f4f4f9 100%);
     padding: 0px;
     position: absolute;
     width: calc(100% - 265px); 
@@ -11,10 +11,13 @@
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0, 255, 255, 0.6);
     overflow: hidden; 
-
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform-style: preserve-3d;
 }
-
-
+.about-page:hover{
+    transform: scale(1.02); /* 3D hover effect */
+    box-shadow: 0 12px 30px rgba(0, 255, 255, 0.8);
+}
 .about-page.hidden {
     transform: translateX(100%);
     opacity: 0;
@@ -28,6 +31,7 @@
     padding: 20px;
     box-sizing: border-box;
 }
+
 .left-aboutPage {
     flex: 1;
     width: 100%;
@@ -41,24 +45,57 @@
     margin-bottom: 1rem;
     font-family: 'Arial', sans-serif;
     text-shadow: 0 4px 6px rgba(87, 204, 214, 0.3); 
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.left-aboutPage h1:hover {
+    transform: translateZ(10px) scale(1.05); /* 3D hover effect */
+    color: #0056b3; /* Hover color change */
 }
 
 .left-aboutPage h2 {
     font-size: 2.5rem;
-    color: #ffffff;
-    margin-bottom: 1rem;
+    color: white;
+    background: -webkit-linear-gradient(rgb(255, 51, 0), #904e95);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Arial', sans-serif;
+    text-shadow: 3px 3px 20px rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.left-aboutPage h2:hover {
+    transform: translateZ(5px) scale(1.02); /* 3D hover effect */
+    color: white;
+    background: -webkit-linear-gradient(rgb(255, 51, 0), #904e95);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Arial', sans-serif;
+    text-shadow: 3px 3px 20px rgba(0, 0, 0, 0.8);
 }
 
 .left-aboutPage h3 {
     font-size: 1.5rem;
     color: #ffffff;
     margin-bottom: 1rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.left-aboutPage h3:hover {
+    transform: translateZ(5px) scale(1.02); /* 3D hover effect */
+    color: white;
+    background: -webkit-linear-gradient(#0a0a0a, #484648);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Arial', sans-serif;
+    text-shadow: 3px 3px 20px rgba(0, 0, 0, 0.8);
 }
 
 .intro-details {
     font-size: 1.2rem;
     color: #ffffff;
     margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
 }
 
 .intro-details p {
@@ -68,14 +105,14 @@
 .intro-details a {
     color: #99c2ee;
     text-decoration: none;
-    transition: color 0.3s;
+    transition: color 0.3s, transform 0.3s ease;
 }
 
 .intro-details a:hover {
     color: #0056b3;
+    transform: translateY(-2px) scale(1.05); /* Slight 3D effect */
 }
 
-/* Buttons styling */
 .buttons {
     margin-top: 20px;
     display: flex;
@@ -94,11 +131,12 @@
     cursor: pointer;
     transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform-style: preserve-3d;
 }
 
 .button:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1) translateZ(5px); /* 3D hover effect */
 }
 
 .download-cv {
@@ -116,7 +154,6 @@
 .hire-me:hover {
     background-color: #388e3c;
 }
-
 
 @media (max-width: 768px) {
     .about-page {

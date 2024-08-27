@@ -1,27 +1,37 @@
-
 .skill-page {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-left: 265px; 
     min-height: 100vh;
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #6dd5fa 100%);
+    background: linear-gradient(135deg, #000000 0%, #2f4550 20%, #586f7c 40%, #b8dbd9 80%, #f4f4f9 100%);
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0, 255, 255, 0.6);
     max-width: 1200px;
-    
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform-style: preserve-3d;
 }
 
+.skill-page:hover {
+    transform: scale(1.02); /* 3D hover effect */
+    box-shadow: 0 12px 30px rgba(0, 255, 255, 0.8);
+    
+}
 
 .skill-page h1 {
     font-size: 2.5rem;
     color: #ffffff;
     margin-bottom: 2rem;
     font-family: 'Arial', sans-serif;
-    text-shadow: 10px 15px 20px rgba(87, 204, 214, 0.1);
+    text-shadow: 3px 3px 20px rgba(0, 0, 0, 0.8);
+    background: -webkit-linear-gradient(rgb(255, 51, 0), #904e95);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-align: center;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
+
 
 
 .skill-container {
@@ -31,7 +41,6 @@
     width: 100%;
     align-items: center;
 }
-
 
 .skill-category {
     background: linear-gradient(135deg, #2c3e50 0%, #4b79a1 100%);
@@ -62,6 +71,12 @@
     font-family: 'Arial', sans-serif;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     text-align: center;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.skill-category h2:hover {
+    transform: translateZ(5px) scale(1.03); /* 3D hover effect */
+    color: #e96443; /* Hover color change */
 }
 
 .skill-content {
@@ -100,7 +115,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    transition: background-color 0.3s, padding-left 0.3s;
+    transition: background-color 0.3s, padding-left 0.3s, transform 0.3s ease;
     padding: 10px;
     border-radius: 5px;
     background: rgba(0, 0, 0, 0.2);
@@ -111,6 +126,7 @@
 .skill-category li:hover {
     background: rgba(0, 188, 212, 0.4);
     padding-left: 15px;
+    transform: translateZ(5px) scale(1.02); /* 3D hover effect */
 }
 
 .skill-category .skill-icon {
@@ -124,6 +140,11 @@
     color: #fff;
     font-size: 1.2rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.skill-category .skill-icon:hover {
+    transform: scale(1.1) translateZ(5px); /* 3D hover effect */
 }
 
 .skill-bar-container {
@@ -160,7 +181,8 @@
     color: #ffffff;
     margin-bottom: 5px;
 }
-.experience-projects h2{
+
+.experience-projects h2 {
     margin-left: 45px;
     font-size: 1.75rem;
     color: #0c0c0c;
@@ -233,7 +255,6 @@
     color: #ffffff;
     margin: 0;
 }
-
 
 @media (max-width: 768px) {
     .skill-page {

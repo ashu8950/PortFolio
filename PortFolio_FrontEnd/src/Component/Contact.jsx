@@ -47,7 +47,7 @@ const Contact = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:5001/send-email', formData);
+      const response = await axios.post('https://portfolio-f64b.onrender.com/send-email', formData);
       console.log('Server Response:', response.data);
       setStatus('Message sent successfully!');
       setFormData({ name: '', email: '', message: '' }); // Clear the form fields

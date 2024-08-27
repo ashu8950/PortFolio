@@ -1,4 +1,4 @@
-
+/* Contact Page Styling */
 .contact-page {
     position: relative;
     margin-left: 21%; 
@@ -7,7 +7,7 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #6dd5fa 100%);
+    background: linear-gradient(135deg, #000000 0%, #2f4550 20%, #586f7c 40%, #b8dbd9 80%, #f4f4f9 100%);
     padding: 15px;
     border-radius: 20px;
     box-shadow: 0 8px 20px rgba(0, 255, 255, 0.6);
@@ -16,14 +16,24 @@
     max-width: 100%;
     overflow-x: hidden;
     overflow-y: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-page:hover {
+    transform: scale(1.02); /* 3D hover effect */
+    box-shadow: 0 12px 30px rgba(0, 255, 255, 0.8);
 }
 
 .contact-page h1 {
     font-size: 2rem;
-    color: #0f0f0f;
+    color: #ffffff;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     font-family: 'Arial', sans-serif;
+    text-shadow: 3px 3px 20px rgba(0, 0, 0, 0.8);
+    background: -webkit-linear-gradient(rgb(255, 51, 0), #904e95);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
@@ -38,20 +48,26 @@
 
 .contact-info {
     flex: 1;
-    background: linear-gradient(135deg, #2c3e50 0%, #4b79a1 100%);
-    padding: 10px;
+    background: linear-gradient(135deg, #000000 0%, #2f4550 20%, #586f7c 40%, #b8dbd9 80%, #f4f4f9 100%);
+    padding: 15px;
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0, 255, 255, 0.6);
-    color: #fcf8f8;
+    color: #ffffff;
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.contact-info:hover {
+    box-shadow: 0 12px 30px rgba(0, 255, 255, 0.8);
+    transform: scale(1.02);
 }
 
 .contact-info h2 {
     font-size: 1.5rem;
-    color: #040404;
-    margin-bottom: 4rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
     font-family: 'Arial', sans-serif;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     text-align: center;
@@ -95,7 +111,7 @@
 }
 
 .contact-info a:hover {
-    color: #00bcd4;
+    color: #141414;
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(0, 255, 255, 0.6);
 }
@@ -107,21 +123,26 @@
 
 .contact-form {
     flex: 2;
-    background: linear-gradient(135deg, #00bcd4, #4a90e2);
+    background: linear-gradient(135deg, #000000 0%, #2f4550 20%, #586f7c 40%, #b8dbd9 80%, #f4f4f9 100%);
     border-radius: 15px;
     padding: 20px;
     box-shadow: 0 8px 20px rgba(0, 255, 255, 0.6);
-    color: #141414;
+    color: #ffffff;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.contact-form:hover{
+    box-shadow: 0 12px 30px rgba(0, 255, 255, 0.8);
+    transform: scale(1.02);
 }
 
 .contact-form h2 {
     font-size: 1.5rem;
     margin-bottom: 10px;
     text-align: center;
-    color: #131313;
+    color: #ffffff;
     font-weight: bold;
 }
 
@@ -163,8 +184,8 @@
 }
 
 .contact-form button {
-    background-color: #007bff;
-    color: rgb(24, 23, 23);
+    background: linear-gradient(135deg, #000000 0%, #2f4550 20%, #586f7c 40%, #b8dbd9 80%, #f4f4f9 100%);
+    color: #ffffff;
     border: none;
     padding: 10px;
     border-radius: 15px;
@@ -180,7 +201,6 @@
     transform: scale(1.05);
 }
 
-
 .map {
     margin-top: 15px;
     text-align: center;
@@ -195,10 +215,9 @@
 .map h2 {
     font-size: 1.25rem;
     margin-bottom: 10px;
-    color: #333;
+    color: #171616;
     font-weight: bold;
     font-size: 2rem;
-    color: #171616;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     font-family: 'Arial', sans-serif;
