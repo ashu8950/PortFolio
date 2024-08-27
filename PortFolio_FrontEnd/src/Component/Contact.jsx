@@ -47,8 +47,7 @@ const Contact = () => {
     }
 
     try {
-      // Update this URL to your Vercel deployment URL
-      const response = await axios.post('/api/send-email', formData);
+      const response = await axios.post('http://localhost:5001/send-email', formData);
       console.log('Server Response:', response.data);
       setStatus('Message sent successfully!');
       setFormData({ name: '', email: '', message: '' }); // Clear the form fields
