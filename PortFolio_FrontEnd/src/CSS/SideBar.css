@@ -209,7 +209,7 @@
     .SideBar_Menu li {
         margin: 10px 0;
         font-size: 16px;
-        text-align: center;
+        
         width: 100%;
     }
 
@@ -224,7 +224,7 @@
         display: inline-block;
         width: 30px;
         height: 30px;
-        margin-right: 0;
+        margin-right: auto;
     }
 
     .overlay.show {
