@@ -67,7 +67,7 @@ const Contact = () => {
 
   // Name validation
   const validateName = (name) => {
-    return name.length >= 2;
+    return name.length >= 3;
   };
 
   // Message validation
