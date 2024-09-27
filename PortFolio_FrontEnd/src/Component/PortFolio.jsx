@@ -15,10 +15,10 @@ const projects = [
     deployedLink: 'https://tour-travel-henna.vercel.app/'
   },
   {
-    title: 'Twitter Clone',
-    description: 'A clone of Twitter built using React and Node.js, featuring real-time updates and user interactions.',
-    githubLink: 'https://github.com/ashu8950/Twiter_Clone',
-    deployedLink: 'https://yourtwitterclone.com'
+    title: 'Fruit.Ai',
+    description: 'fruit.ai is your personal fruit encyclopedia. Easily search for any fruit, and discover a wealth of information,login_Email: admin@example.com , password:password',
+    githubLink: 'https://github.com/ashu8950/Fruit.Ai',
+    deployedLink: 'http://fruitsai.netlify.app'
   },
   {
     title: 'Zerodha',
